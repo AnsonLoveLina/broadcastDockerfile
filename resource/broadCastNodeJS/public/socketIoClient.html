@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>socketIo测试</title>
+</head>
+<body>
+<h1>socketIo测试</h1>
+<input type="button" value="sendGroupRegister" onclick="sendGroupRegister()"/>
+<input type="button" value="sendUserBroadcastInfo" onclick="sendUserDCN()"/>
+<input type="button" value="sendGroupBroadcastInfo" onclick="sendGroupDCN()"/>
+</body>
+<script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:3000');
+    console.log(socket);
+    socket.on("connect",function () {
+        socket.emit("register", "{'group':'110'}");
+    });
+
+    socket.on("STUFF", function (data) {
+        console.log("STUFF"+data);
+    });
+
+    socket.on("err", function (data) {
+        console.log("info"+data);
+    });
+
+    socket.on("info", function (data) {
+        console.log("info"+data);
+    });
+
+    socket.on("groupStatus", function (data) {
+        console.log("groupStatus"+data);
+    });
+
+    socket.on("groupMessage", function (data) {
+        console.log("groupMessage"+data);
+    });
+
+    socket.on("taskFeedbackStream", function (data) {
+        console.log("taskFeedbackStream"+data);
+    });
+
+    socket.on("taskStream", function (data) {
+        console.log("taskStream"+data);
+    });
+
+    function unRegister(){
+        socket.emit("unRegister", {"user": "6A2C1FBC70FE38EEE050007F010061E5"});
+    }
+
+    function sendGroupRegister() {
+        socket.emit("register", {"group": "vvv"});
+    }
+
+    function sendUserDCN() {
+        var data = {};
+        data.roomName = "xxx";
+        data.eventName = "countMsg";
+        data.text = 99;
+        socket.emit("broadcastInfo", data);
+    }
+
+    function sendGroupDCN() {
+        var data = {};
+        data.roomName = "vvv";
+        data.eventName = "receive";
+        data.text = 100;
+        socket.emit("broadcastInfo", data);
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "broadcastnodejs",
+  "version": "0.0.8",
+  "private": false,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "log4js": "^2.5.3",
+    "morgan": "~1.9.0",
+    "node-schedule": "latest",
+    "socket.io": "^2.1.0",
+    "socket.io-client": "latest"
+  },
+  "devDependencies": {
+    "async": "^2.6.0",
+    "node-schedule": "latest",
+    "socket.io-client": "latest"
+  },
+  "description": "server端主动发送广播给客户端",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,1 @@
+nohup node /broadcastserver/broadCastNodeJS/bin/www &
