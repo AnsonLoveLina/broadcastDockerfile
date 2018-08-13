@@ -27,11 +27,9 @@ To install docker in Ubuntu 14.04 use the commands:
 
 After that open up the following address :
 
-  - **https://$DOCKER_HOST:3001/
+  - **http://$DOCKER_HOST:3000/
 
 
 ## More Info
 
-About apprtc: [https://appr.tc/] [1]
-
-To help improve this container [docker-apprtc] [5]
+About apprtc: [https://github.com/AnsonLoveLina/broadCastNodeJS] [1]
